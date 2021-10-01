@@ -16,18 +16,18 @@ enum LeafType {
 }
 
 class LeafSessionFactory {
-  static LeafSession createLeafSession(LeafType leafType, String username, String password) {
+  static LeafSession createLeafSession(LeafType leafType, String username, String password, String userAgent) {
     switch (leafType) {
       case LeafType.newerThanMay2019:
         return NissanConnectSessionWrapper(username, password);
         break;
 
       case LeafType.olderCanada:
-        return NissanConnectNASessionWrapper('CA', username, password);
+        return NissanConnectNASessionWrapper('CA', username, password, userAgent);
         break;
 
       case LeafType.olderUsa:
-        return NissanConnectNASessionWrapper('US', username, password);
+        return NissanConnectNASessionWrapper('US', username, password, userAgent);
         break;
 
       default:

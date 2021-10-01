@@ -37,7 +37,7 @@ leaf2mqtt is packaged as a container. This is an automatically published / updat
 
 ##### Example:
 ```
-docker run --restart always -e LEAF_USERNAME="myusername@somewhere.com" -e LEAF_PASSWORD="Some P4ssword!" -e LEAF_TYPE="newerThanMay2019" -e MQTT_HOST=192.168.1.111 -e UPDATE_INTERVAL_MINUTES=1440 --name leaf2mqtt ghcr.io/k8s-at-home/leaf2mqtt:latest
+docker run --restart always -e LEAF_USERNAME="myusername@somewhere.com" -e LEAF_PASSWORD="Some P4ssword!" -e LEAF_TYPE="newerThanMay2019" -e MQTT_HOST=192.168.1.111 -e UPDATE_INTERVAL_MINUTES=1440  -e USER_AGENT='NissanLeaf/7.2.4 CFNetwork/1312 Darwin/21.0.0' --name leaf2mqtt ghcr.io/k8s-at-home/leaf2mqtt:latest
 ```
 
 :information_source: The `CHARGING_UPDATE_INTERVAL_MINUTES` value will only be used after the ongoing `UPDATE_INTERVAL_MINUTES` is elapsed and the Leaf is charging.

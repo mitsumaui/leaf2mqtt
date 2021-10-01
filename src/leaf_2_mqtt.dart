@@ -34,6 +34,7 @@ Future<void> main() async {
 
   final String leafUser = envVars['LEAF_USERNAME'];
   final String leafPassword = envVars['LEAF_PASSWORD'];
+  final String userAgent = envVars['USER_AGENT'];
 
   if ((leafUser?.isEmpty ?? true) || (leafPassword?.isEmpty ?? true)) {
     _log.severe(
@@ -55,7 +56,7 @@ Future<void> main() async {
   }
 
   _session =
-      LeafSessionFactory.createLeafSession(leafType, leafUser, leafPassword);
+      LeafSessionFactory.createLeafSession(leafType, leafUser, leafPassword, userAgent);
 
   await _login();
 
