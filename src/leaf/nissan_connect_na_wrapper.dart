@@ -11,17 +11,18 @@ final Logger _log = Logger('NissanConnectNASessionWrapper');
 
 class NissanConnectNASessionWrapper extends LeafSessionInternal {
   NissanConnectNASessionWrapper(
-      this._countryCode, String username, String password)
+      this._countryCode, String username, String password, this._userAgent)
       : super(username, password);
 
   NissanConnectSession _session;
   final String _countryCode;
+  final String _userAgent;
 
   @override
   Future<void> login() async {
     _session = NissanConnectSession(debug: _log.level <= Level.FINER);
     await _session.login(
-        username: username, password: password, countryCode: _countryCode, userAgent: 'NissanLeaf/7.2.4 CFNetwork/1312 Darwin/21.0.0');
+        username: username, password: password, countryCode: _countryCode, userAgent: _userAgent);
 
     final List<VehicleInternal> newVehicles = _session.vehicles
         .map((NissanConnectVehicle vehicle) =>
