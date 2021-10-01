@@ -21,7 +21,7 @@ class NissanConnectNASessionWrapper extends LeafSessionInternal {
   Future<void> login() async {
     _session = NissanConnectSession(debug: _log.level <= Level.FINER);
     await _session.login(
-        username: username, password: password, countryCode: _countryCode);
+        username: username, password: password, countryCode: _countryCode, userAgent: 'NissanLeaf/7.2.4 CFNetwork/1312 Darwin/21.0.0');
 
     final List<VehicleInternal> newVehicles = _session.vehicles
         .map((NissanConnectVehicle vehicle) =>

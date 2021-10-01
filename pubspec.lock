@@ -36,33 +36,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.1"
-  dartcarwings:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "405a89ed99fa296ea3dae0e72b6636bea50738bd"
-      url: "https://github.com/Tobiaswk/dartcarwings"
-    source: git
-    version: "1.0.0"
-  dartnissanconnect:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "2a5b7e449fb0762712cc17fea75c703182708323"
-      url: "https://github.com/Tobiaswk/dartnissanconnect"
-    source: git
-    version: "1.0.0"
-  dartnissanconnectna:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "902946e38daabd60e08ddd4c93fcdaefa418fb07"
-      url: "https://github.com/Tobiaswk/dartnissanconnectna"
-    source: git
-    version: "1.0.0"
   event_bus:
     dependency: transitive
     description:
